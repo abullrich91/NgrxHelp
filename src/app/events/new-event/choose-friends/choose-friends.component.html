@@ -1,0 +1,49 @@
+<form (ngSubmit)="submit()" #chooseFriendsForm="ngForm">
+<div class="container bg-3 text-left">
+  <div class="row separa pad-top">
+    <div class="col-xs-3 col-lg-3 nopadding">
+      <a href=""><img src="assets/images/look1.jpg" class="img-responsive img-thumbnail" alt="Image"></a>
+    </div>
+    <div class="col-xs-3 col-lg-3 nopadding">
+      <a href=""><img src="assets/images/look1.jpg" class="img-responsive img-thumbnail" alt="Image"></a>
+    </div>
+    <div class="col-xs-3 col-lg-3 nopadding">
+      <a href=""><img src="assets/images/look1.jpg" class="img-responsive img-thumbnail" alt="Image"></a>
+    </div>
+    <div class="col-xs-3 col-lg-3 nopadding">
+      <a href=""><img src="assets/images/look1.jpg" class="img-responsive img-thumbnail" alt="Image"></a>
+    </div>
+  </div>
+  <div class="row separa">
+    <div class="col-xs-12 nopadding">
+      <div class="search">
+        <!--<span class="fa fa-search"></span>-->
+        <input #searchfriends class="search" placeholder="Buscar amigos" [(ngModel)]="searchTerm" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+  </div>
+  <div class="row separa margen-salvador">
+    <div class="col-xs-12 col-lg-12 lista-amigos">
+      <p class="todos-seleccion"><img src="assets/images/ico-seleccionar-todos.png"> TODOS</p> <img
+      class="ico-check-todos" [ngClass]="{'grises': event.userIds.length !== friends.length}"
+      src="assets/images/ico-tick.png" (tap)="toggleAllFriends()">
+    </div>
+  </div>
+  <div *ngFor="let friend of friends; let friendIndex = index">
+    <div class="row separa">
+      <div class="col-xs-12 col-lg-12 lista-amigos">
+        <img [ngClass]="{'grises': !selectedFriend(friend.id)}" class="perfil-img img-circle img-thumbnail" src="{{friend.avatarUrl}}">
+        <span [ngClass]="{'grises': !selectedFriend(friend.id)}" class="nick-usuario">{{friend.username}}</span> <span class="nombre-usuario">{{friend.nickname}}</span>
+        <img [ngClass]="{'grises': !selectedFriend(friend.id)}" (tap)="toggleFriend(friend.id)"
+        class="check-ico"
+        src="assets/images/ico-tick.png">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid footer-distant">
+  <div class="row">
+    <button class="btn-izq" (tap)="back()">Back</button>
+    <button class="btn-der" type="submit()">Submit</button>
+  </div>
+</div>

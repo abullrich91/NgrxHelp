@@ -1,0 +1,73 @@
+<form (ngSubmit)="next()" novalidate #eventInfoForm="ngForm" [formGroup]="form">
+  <div class="container bg-3 text-left pad-top">
+    <div class="row separa">
+      <div class="col-xs-3 col-lg-3 nopadding">
+        <a href=""><img src="/assets/images/look1.jpg" class="img-responsive img-thumbnail" alt="Image"></a>
+      </div>
+      <div class="col-xs-3 col-lg-3 nopadding">
+        <a href=""><img src="/assets/images/look1.jpg" class="img-responsive img-thumbnail" alt="Image"></a>
+      </div>
+      <div class="col-xs-3 col-lg-3 nopadding">
+        <a href=""><img src="/assets/images/look1.jpg" class="img-responsive img-thumbnail" alt="Image"></a>
+      </div>
+      <div class="col-xs-3 col-lg-3 nopadding">
+        <a href=""><img src="/assets/images/look1.jpg" class="img-responsive img-thumbnail" alt="Image"></a>
+      </div>
+    </div>
+    <div class="row mini-padding separa text-center">
+      <div class="col-xs-12 nopadding">
+        <!--<input type="text" placeholder="Texto Default">-->
+        <div class="caja-combo">
+          <img class="ico-evento" src="assets/images/ico-evento.png" alt="">
+          <select name="Evento" class="flecha-combo" formControlName="eventTypeId">
+            <option disabled selected hidden value="null">Tipo de Evento</option>
+            <option [ngValue]="eventType.id" *ngFor="let eventType of eventTypes">{{eventType.description}}</option>
+          </select>
+        </div>
+        <div class="caja-combo">
+          <img class="ico-duracion" src="assets/images/ico-duracion.png" alt="">
+          <select name="Duracion" class="flecha-combo" formControlName="duration">
+            <option selected hidden value="null">Una Semana</option>
+            <option [ngValue]="duration.duration" *ngFor="let duration of durationArray">{{duration.duration}}</option>
+          </select></div>
+          <textarea
+          class="comentario" placeholder="Tengo una fiesta, mi mejor amiga está de cumpleaños toda la noche. Festeja sus 15 años!!!!" formControlName="comment">{{event.comment}}</textarea>
+        </div>
+        <div class="row mini-padding separa margen-salvador">
+          <!--Por default se muestra en público-->
+          <img class="paddincito-ico" src="assets/images/ico-mundito.png"><span class="opciones-privacidad">Público</span>
+          <label class="switch">
+            <input type="checkbox" formControlName="privacyId">
+            <div class="slider round" (tap)="setPrivacyId($event.target.value)"></div>
+          </label>
+          <!-- Si el usuario no tiene amigos la opción de look privado aparece bloqueada. Al texto se le aplica la clase .privado-block-ico al ícono y .privado-block a la etiqueta span  -->
+          <img class="paddincito-ico" src="assets/images/ico-privado.png"><span class="opciones-privacidad">Privado</span>
+          <div id="pop-error" *ngIf="privacyError" (tap)="privacyError = false">
+          <img src="assets/images/ico-error-pop-up.png"><br/>
+            <p class="texto-error">Debes tener amigos para publicar tu look como privado.</p>
+          </div>
+        </div>
+        <!-- Si el usuario selecciona Look Privado las opciones de compartir con todos y tu País desaparecen -->
+        <div class="row mini-padding separa margen-salvador">
+          <img class="paddincito-ico" src="assets/images/ico-tu-pais.png"><span class="opciones-privacidad">Tu País</span>
+          <label class="switch">
+            <input type="checkbox" formControlName="isGlobal">
+            <div class="slider round" (tap)="setIsGlobal($event.target.value)"></div>
+          </label>
+          <img class="paddincito-ico" src="assets/images/ico-todos.png">
+          <p class="opciones-privacidad">Todos</p>
+        </div>
+        <div class="row mini-padding separa margen-salvador">
+        <button (tap)="reset()">Reset</button>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid footer-distant">
+      <div class="row">
+        <!-- Si el look es privado va a la pantalla siguiente. Si es público el botón siguiente se transforma en botón Publicar. -->
+        <!--<a class="btn-izq" href="#">Publicar</a>-->
+        <button class="btn-izq" (tap)="back()">Back</button>
+        <button type="submit" class="btn-der" [disabled]="!eventInfoForm.form.valid">Next</button>
+      </div>
+    </div>
+  </form>

@@ -1,0 +1,7 @@
+{
+	"/qmp-api/*": {
+		"target": "http://localhost:8095",
+		"secure": false,
+		"logLevel": "debug"
+	}
+}

@@ -1,0 +1,164 @@
+.descriplook {
+  color: #616161;
+  display: inline;
+  width: 80%;
+  font-size: 0.9em;
+
+}
+
+/*fondo que contiene imagenes de los looks, lo puse acÃƒÂ¡ porque tambiÃƒÂ©n va en el primer paso de cargar look.*/
+
+.fondo-contenedor {
+  background-color: #c2c2c2;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 0.5em;
+  margin-bottom: 0.1em;
+}
+
+.ico-descripcion {
+  display: inline;
+}
+
+.img-thumbnail {
+  padding: 2px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.foto-votada {
+  background-color: #df2562;
+}
+
+.event-option-dere {
+  float: left;
+}
+
+.event-option-izq {
+  float: right;
+}
+
+.event-option-izq, .event-option-dere {
+  width: 80% !important;
+  z-index: 100;
+}
+
+.porcentaje-nro-1 {
+  font-size: 1.28em;
+  text-align: center;
+  color: #FFF;
+  display: inline;
+}
+
+.porcentaje-signo {
+  font-size: 1.4em;
+  text-align: center;
+  top: 1em;
+  color: #FFF;
+  display: inline;
+  margin-left: 0.1em;
+}
+
+.porcentaje-nro-2 {
+  font-size: 1.28em;
+  text-align: center;
+  color: #FFF;
+  display: inline;
+}
+
+.porcentaje-signo-2 {
+  font-size: 1.4em;
+  text-align: center;
+  top: 1em;
+  float: none;
+  color: #FFF;
+  display: inline;
+  margin-right: 0.27em;
+  max-width: 30px;
+}
+
+.megusta {
+  padding: 0.5px;
+}
+
+.megusta-2 {
+  display: inline;
+  margin-right: 0.35em;
+  max-width: 30px;
+}
+
+.megusta-home-dere {
+  display: inline;
+  max-width: 40px;
+}
+
+.megusta-home-izq {
+  display: inline;
+  max-width: 40px;
+}
+
+.divisor-votos-izq {
+  border: 1px solid #FFF !important;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.divisor-votos-dere {
+  border: 1px solid #FFF !important;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.event-metadata-izq {
+  width: 20%;
+  float: left;
+}
+
+.event-metadata-der {
+  width: 20%;
+  float: right;
+}
+
+.noppading-banner {
+  padding: 0px !important;
+}
+
+.voted-image-wrapper {
+  background-color: #ff1f65;
+  opacity: 0.6;
+  border-radius: 4px;
+}
+
+.opacity-60 {
+  opacity: 0.6;
+}
+
+.wordwrap {
+  white-space: pre-wrap; /* CSS3 */
+  white-space: -moz-pre-wrap; /* Firefox */
+  white-space: -pre-wrap; /* Opera <7 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* IE */
+}
+
+@media screen and (max-width: 320px) {
+  .megustaico {
+    max-width: 25px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .megustaico {
+    max-width: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .look-imagen-1 {
+    float: right;
+  }
+}

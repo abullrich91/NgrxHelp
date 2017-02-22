@@ -1,0 +1,54 @@
+/************************* listas amigos/usuarios *************************/
+.fondo-columna {
+  background-color: #f0f0f0;
+}
+
+.perfil-img {
+  margin-right: 4px;
+  height: auto;
+  float: left;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 40px;
+}
+
+.nombre-usuario {
+  font-size: 0.9em;
+  display: block;
+  position: relative;
+  color: #9e9e9e;
+  top: 10px;
+}
+
+.nick-usuario {
+  font-size: 0.9em;
+  display: block;
+  position: relative;
+  font-weight: bold;
+  color: #9e9e9e;
+  top: 10px;
+}
+
+.lista-amigos {
+  border-bottom: 1px solid #c9c9c9;
+
+}
+
+.todos-seleccion {
+  font-weight: bold;
+  color: #383838;
+  font-size: 1em;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.check-ico {
+  float: right;
+  position: relative;
+  top: -20px;
+}
+
+.ico-check-todos {
+  float:right;
+  top:0px
+}
